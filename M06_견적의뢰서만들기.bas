@@ -218,11 +218,7 @@ Sub 견적의뢰서생성()
         .Replace 1, "토철"
     End With
     
-    With wsNew.Range(wsNew.Cells(2, 22), wsNew.Cells(L2, 23)).Borders
-        .LineStyle = xlContinuous
-        .ColorIndex = 0
-        .Weight = xlMedium
-    End With
+    wsNew.Range(wsNew.Cells(2, 22), wsNew.Cells(L2, 23)).BorderAround LineStyle:=xlContinuous, Weight:=xlMedium, ColorIndex:=0
         
     wsNew.Range(wsNew.Cells(4, 22), wsNew.Cells(L2, 22)).ClearContents
     wsNew.Range(wsNew.Cells(4, 27), wsNew.Cells(L2, 27)).ClearContents
@@ -282,11 +278,7 @@ Sub 견적의뢰서생성()
             .AutoFilter Field:=15
         End With
         
-        With wsNew.Range(wsNew.Cells(2, 22), wsNew.Cells(L2, 23)).Borders
-            .LineStyle = xlContinuous
-            .ColorIndex = 0
-            .Weight = xlMedium
-        End With
+        wsNew.Range(wsNew.Cells(2, 22), wsNew.Cells(L2, 23)).BorderAround LineStyle:=xlContinuous, Weight:=xlMedium, ColorIndex:=0
         
         wsNew.Range(wsNew.Cells(4, 22), wsNew.Cells(L2, 22)).ClearContents
         wsNew.Range(wsNew.Cells(4, 27), wsNew.Cells(L2, 27)).ClearContents
