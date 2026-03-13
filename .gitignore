@@ -1,0 +1,10 @@
+# Excel temporary files
+~$*.xls*
+
+# VBA backup/temp files
+*.tmp
+*.bak
+
+# Windows-specific
+Thumbs.db
+Desktop.ini
