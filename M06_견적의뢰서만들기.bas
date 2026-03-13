@@ -3,9 +3,10 @@
 ' ==========================================
 Sub 견적공종가져오기()
     Dim shTomo As Worksheet, shMacro As Worksheet
+    Dim shStart As Worksheet
     Dim i As Long
     
-    Set shTomo = Sheets("토목실행")
+    Set shStart = ActiveSheet
     Set shMacro = Sheets("부가기능(매크로)")
     
     On Error GoTo ErrorHandler
@@ -70,6 +71,7 @@ CleanUp:
         .Calculation = xlCalculationAutomatic
         .ScreenUpdating = True
     End With
+    If Not shStart Is Nothing Then shStart.Activate
     Exit Sub
 
 ErrorHandler:
@@ -84,8 +86,9 @@ Sub 견적의뢰서생성()
     Dim L1 As Long, L2 As Long, cnt As Long, StartRowN As Long, EndRowN As Long
     Dim StartRowN2 As Long, EndRowN2 As Long
     Dim StartRowN1 As Long, EndRowN1 As Long
+    Dim shStart As Worksheet
    
-    Dim tR As Range, tmp As Range
+    Set shStart = ActiveSheet
     Dim Gongjong As String, Mypath As String
     Dim Mywork As String, Myfile As String, TGfile As String
     Dim MyPjtName As String
@@ -369,7 +372,8 @@ CleanUp:
         MsgBox statusMsg, vbInformation, "작업 결과 보고"
     End If
     
-    ' shMacro.Select 제거 (Karpathy 가이드라인 준수)
+    ' 원래 시트로 안전하게 복귀
+    If Not shStart Is Nothing Then shStart.Activate
     Exit Sub
 
 ErrorHandler:
