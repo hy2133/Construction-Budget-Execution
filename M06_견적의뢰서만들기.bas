@@ -63,8 +63,7 @@ Sub 견적공종가져오기()
         End With
     End If
 
-    ' 선택 구역 해제 (단일 셀 선택)
-    shMacro.Cells(8, 8).Select
+    ' 선택 구역 해제 생략 (Select 제거)
 
 CleanUp:
     With Application
@@ -370,7 +369,7 @@ CleanUp:
         MsgBox statusMsg, vbInformation, "작업 결과 보고"
     End If
     
-    shMacro.Select
+    ' shMacro.Select 제거 (Karpathy 가이드라인 준수)
     Exit Sub
 
 ErrorHandler:
